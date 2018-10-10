@@ -13,6 +13,8 @@
  fetch('/region')
   .then(function(response) {
     let availabilityZone = response;
+    console.log(response);
+    console.log(response.json());
     document.getElementById('az-data').innerHTML = availabilityZone;
     return response.json();
   })
