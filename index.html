@@ -20,7 +20,7 @@
                 body: data
             })))
             .then((response)=>{
-                avalibilityZone = obj && obj.body;
+                avalibilityZone = response && response.body;
                 document.getElementById('az-data').innerHTML = avalibilityZone;
             });
     }
