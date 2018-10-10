@@ -13,7 +13,7 @@
  window.onload = function send(){
      let azz;
      fetch("/region")
-.then(r =>  r.json().then(data => ({status: r.status, body: data})))
+.then(r =>  r.text().then(data => ({status: r.status, body: data})))
 .then(obj => console.log(obj));
 }
   </script>
