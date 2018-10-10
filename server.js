@@ -4,7 +4,7 @@ const path = require('path');
 const port = 3000;
 const request = require('request');
 
-let result = request('https://www.google.com/', function (error, response, body) {
+let result = request('http://169.254.169.254/latest/meta-data/placement/availability-zone', function (error, response, body) {
   if (!error && response) {
   }
   else {
