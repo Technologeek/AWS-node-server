@@ -1,20 +1,29 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <meta charset="UTF-8">
     <title>AWS Node Server</title>
-  </head>
-  <body>
-  <div>This is a demo application</div>
-  <h3>This Page is served from the Availability Zone : </h3>
-  <span id="az-data"></span>
-  </body>
-  <script>
- window.onload = function send(){
-     let azz;
-     fetch("/region")
-.then(r =>  r.text().then(data => ({status: r.status, body: data})))
-.then(obj => console.log(obj));
-}
-  </script>
+</head>
+
+<body>
+    <div>This is a demo application</div>
+    <h3>This Page is served from the Availability Zone : </h3>
+    <span id="az-data"></span>
+</body>
+<script>
+    window.onload = function send() {
+        let azz;
+        fetch("/region")
+            .then(response=> response.text().then(data => ({
+                status: response.status,
+                body: data
+            })))
+            .then((response)=>{
+                avalibilityZone = obj && obj.body;
+                document.getElementById('az-data').innerHTML = avalibilityZone;
+            });
+    }
+</script>
+
 </html>
