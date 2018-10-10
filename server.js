@@ -8,7 +8,7 @@ app.get('/', function(req, res) {
 });
 request('http://169.254.169.254/latest/meta-ment/availability-zone', function (error, response, body) {
   if (!error && response) {
-    console.log(body) // Show the HTML for the Google homepage. 
+    console.log(response) // Show the HTML for the Google homepage. 
   }
   else {
     console.log("Error "+response)
