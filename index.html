@@ -6,10 +6,14 @@
   </head>
   <body>
   <div>This is a demo application</div>
+  <h3>This Page is served from the Availability Zone : </h3>
+  <span id="az-data"></span>
   </body>
   <script>
  fetch('/region')
   .then(function(response) {
+    let availabilityZone = response;
+    document.getElementById('az-data').innerHTML = availabilityZone;
     return response.json();
   })
   .then(function(myJson) {
