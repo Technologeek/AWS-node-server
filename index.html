@@ -42,19 +42,18 @@
     }
     a {
         text-decoration: none;
-
     }
 </style>
 
 <body>
     <div id="title">AWS Exercise - Rahul Patil - 20083299</div>
     <h3 id="zone-av">This Page is served from the Availability Zone : </h3>
-    <span id="az-data">dsadsadasdsad</span>
+    <span id="az-data"></span>
     <span id="gh-link"><a href="https://github.com/Technologeek/AWS-node-server" target="_blank">GitHub Repo Link</a></span>
 </body>
 <script>
     window.onload = function send() {
-        let azz;
+        let avalibilityZone;;
         fetch("/region")
             .then(response => response.text().then(data => ({
                 status: response.status,

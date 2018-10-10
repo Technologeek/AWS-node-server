@@ -14,7 +14,7 @@ app.use(function(req, res, next) {
     next();
 })
 app.get("/region", function(req, res) {
-    var remote = request('http://169.254.169.254/latest/meta-data/placement/availability-zone');
+    const remote = request('http://169.254.169.254/latest/meta-data/placement/availability-zone');
     req.pipe(remote);
     remote.pipe(res);
 });
