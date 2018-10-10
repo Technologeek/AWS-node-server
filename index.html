@@ -10,16 +10,11 @@
   <span id="az-data"></span>
   </body>
   <script>
- fetch('/region')
-  .then(function(response) {
-    let availabilityZone = response;
-    console.log(response);
-    console.log(response.json());
-    document.getElementById('az-data').innerHTML = availabilityZone;
-    return response.json();
-  })
-  .then(function(myJson) {
-    console.log(JSON.stringify(myJson));
-  });
+ window.onload = function send(){
+     let azz;
+     fetch("/region")
+.then(r =>  r.json().then(data => ({status: r.status, body: data})))
+.then(obj => console.log(obj));
+}
   </script>
 </html>
