@@ -5,21 +5,62 @@
     <meta charset="UTF-8">
     <title>AWS Node Server</title>
 </head>
+<style>
+    body {
+        background-image: url("https://media.giphy.com/media/3o7qE1YN7aBOFPRw8E/giphy.gif");
+        background-repeat: no-repeat;
+    }
+
+    #title {
+        display: flex;
+        justify-content: center;
+        font-family: monospace;
+        color: #673AB7;
+    }
+
+    #zone-av {
+        display: flex;
+        justify-content: center;
+        color: #00BCD4;
+        font-family: fantasy;
+    }
+
+    #az-data {
+        display: flex;
+        justify-content: center;
+        color: #E91E63;
+        font-family: fantasy;
+        text-decoration: underline;
+    }
+
+    #gh-link {
+        display: flex;
+        justify-content: center;
+        color: #673AB7;
+        font-family: monospace;
+
+    }
+    a {
+        text-decoration: none;
+
+    }
+</style>
 
 <body>
-    <div>This is a demo application</div>
-    <h3>This Page is served from the Availability Zone : </h3>
-    <span id="az-data"></span>
+    <div id="title">AWS Exercise - Rahul Patil - 20083299</div>
+    <h3 id="zone-av">This Page is served from the Availability Zone : </h3>
+    <span id="az-data">dsadsadasdsad</span>
+    <span id="gh-link"><a href="https://github.com/Technologeek/AWS-node-server" target="_blank">GitHub Repo Link</a></span>
 </body>
 <script>
     window.onload = function send() {
         let azz;
         fetch("/region")
-            .then(response=> response.text().then(data => ({
+            .then(response => response.text().then(data => ({
                 status: response.status,
                 body: data
             })))
-            .then((response)=>{
+            .then((response) => {
                 avalibilityZone = response && response.body;
                 document.getElementById('az-data').innerHTML = avalibilityZone;
             });
